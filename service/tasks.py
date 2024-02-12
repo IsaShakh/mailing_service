@@ -27,7 +27,7 @@ def send_mail(self, info, mailing_id, client_id, url=URL):
     timezone = pytz.timezone(client.timezone)
     actual_time = datetime.now(timezone)
 
-    if actual_time.time >= mailing.starting_date and actual_time.time <= mailing.ending_date:
+    if actual_time.time >= mailing.starting_date.time() and actual_time.time <= mailing.ending_date.time():
         try:
             requests.post(url + str(info['id']), headers=headers, json=info)
             logger.info('Сообщение отправлено!')

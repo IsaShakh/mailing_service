@@ -24,7 +24,7 @@ class ClientViewSet(viewsets.ModelViewSet):
     serializer_class = ClientSerializer
 
 
-class MailingServiceViewSet(viewsets):
+class MailingServiceViewSet(viewsets.ModelViewSet):
     serializer_class = MailingSerializer
     queryset = Mailing.objects.all()
 
